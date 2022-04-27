@@ -51,5 +51,5 @@ listint_t *insert_node(listint_t **head, int number)
 		}
 		after = after->next, evaluation = evaluation->next;
 	}
-	return (*head);
+	return (new_node);
 }
