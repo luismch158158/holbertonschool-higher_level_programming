@@ -12,46 +12,44 @@
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *new_node = NULL;
-	listint_t *evaluation = *head;
-	listint_t *temp;
+	listint_t *new_node = NULL, *evaluation = *head, *after = NULL;
+
+	if (head == NULL)
+		return (NULL);
 
 	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
 		return (NULL);
-	
 	new_node->n = number;
-
-	if (head == NULL)
+	if (*head == NULL)
 	{
-		new_node->next = NULL;
-        	*head = new_node;
-        	return (*head);
+		new_node->next = NULL, *head = new_node;
+		return (*head);
 	}
-		if (number <= (evaluation->n))
+	if (number <= (evaluation->n))
+	{
+		new_node->next = *head, *head = new_node;
+		return (*head);
+	}
+	after = evaluation->next;
+	while (evaluation)
+	{
+		if (after == NULL)
 		{
-			new_node->next = *head;
-			*head = new_node;
-			return (*head);
-		}
-
-		else
-		{
-			while (evaluation->next)
-			{
-				if (number <= (evaluation->n))
-				{
-					temp = evaluation->next;
-					evaluation->next = new_node;
-					new_node->next = temp;
-					return (new_node);
-				}
-				evaluation = evaluation->next;
-			}
-			temp = evaluation->next;
 			evaluation->next = new_node;
-			new_node->next = temp;
-			return (*head);
-
+			break;
 		}
+		else if (number == (after->n))
+		{
+			evaluation->next = new_node, new_node->next = after;
+			break;
+		}
+		else if ((after->n > number) && (evaluation->n < number))
+		{
+			evaluation->next = new_node, new_node->next = after;
+			break;
+		}
+		after = after->next, evaluation = evaluation->next;
+	}
+	return (*head);
 }
