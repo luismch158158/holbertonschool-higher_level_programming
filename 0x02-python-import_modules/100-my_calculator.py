@@ -4,7 +4,6 @@ import sys
 
 if __name__ == "__main__":
     longitud = len(sys.argv)
-    items = 0
 
     if (longitud != 4):
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
@@ -16,7 +15,9 @@ if __name__ == "__main__":
 
     struct = {"+": add, "-": sub, "*": mul, "/": div}
 
-    if operator not in struct:
+    if ((operator != "+") and (operator != "-")
+            and (operator != "*") and (operator != "/")):
         print("Unknown operator. Available operators: +, -, * and /")
         exit(1)
+
     print(f'{item_1} {operator} {item_2} = {struct[operator](item_1, item_2)}')
