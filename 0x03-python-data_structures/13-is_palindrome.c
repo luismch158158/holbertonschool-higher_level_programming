@@ -1,5 +1,29 @@
 #include "lists.h"
 
+
+/**
+ * check_palindrome - Function that check palindrome recursion
+ *
+ * @head: pointer to head
+ * @final: pointer to node
+ *
+ * Return: NULL if not is palindrome
+ */
+
+listint_t *check_palindrome(listint_t *head, listint_t *final)
+{
+	if (final->next)
+		head = check_palindrome(head, final->next);
+
+	if (!head || head->n != final->n)
+		return (0);
+
+	if (head->next)
+		head = head->next;
+
+	return (head);
+}
+
 /**
  * is_palindrome - Function that checks if the linked
  * lists is palindrome
@@ -12,31 +36,13 @@
 
 int is_palindrome(listint_t **head)
 {
-	listint_t *start = *head, *final = *head, *holder = NULL;
-	int count = 0, analize = 0, i = 0;
+	listint_t *final = *head;
 
-	if (*head == NULL)
+	if (head == NULL || *head == NULL)
 		return (1);
 
-	for (i = 0; final->next; i++)
-	{
-		final = final->next;
-		count++;
-	}
+	if (check_palindrome(*head, final) == 0)
+		return (0);
 
-	if (count % 2 != 0)
-		count = count - 1;
-
-	while (analize < (count / 2))
-	{
-		if (start->n != final->n)
-			return (0);
-		start = start->next;
-		holder = start;
-		while (holder->next != final)
-			holder = holder->next;
-		final = holder;
-		analize++;
-	}
 	return (1);
 }
