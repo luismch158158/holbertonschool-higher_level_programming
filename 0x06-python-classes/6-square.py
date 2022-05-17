@@ -38,10 +38,12 @@ class Square:
 
     @property
     def position(self):
+        """Retrieves the position."""
         return self.__position
 
     @position.setter
     def position(self, value):
+        """Sets the position to a value."""
         if (type(value) is not tuple) or (len(value) != 2)\
                 or (type(value[0]) is not int)\
                 or (type(value[1]) is not int)\
@@ -51,7 +53,7 @@ class Square:
             self.__position = value
 
     def my_print(self):
-        """Print square with the character #"""
+        """Print square with the character # in stdout"""
         if self.__size == 0:
             print()
         else:
