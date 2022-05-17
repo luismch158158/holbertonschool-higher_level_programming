@@ -11,4 +11,4 @@ def safe_function(fct, *args):
         sys.stderr.write("Exception: {}\n".format(ne))
     except IndexError as ni:
         return None
-        sys.stderr.write("Excepction: {}\n".format(ni))
+        sys.stderr.write("Exception: {}\n".format(ni))
