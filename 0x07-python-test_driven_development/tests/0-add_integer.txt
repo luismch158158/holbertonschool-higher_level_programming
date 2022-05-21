@@ -1,0 +1,60 @@
+===============================
+ How to Use doctest_in_help.py
+===============================
+
+This library is very simple, since it only has one function called
+``add_integer(a, b=98)``
+
+File ``0-add_integer.py``
+
+Returns an integer: the addition of a and b arguments
+
+Importing the function:
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Checks to realise:
+
+	>>> add_integer(4, 8)
+    	12
+
+    	>>> add_integer(8, -100)
+    	-92
+
+	>>> add_integer(5.6, 8)
+	13
+
+	>>> add_integer([5, 5], "hola")
+	Traceback (most recent call last):
+                ...
+        TypeError: a must be an integer
+
+	>>> add_integer(4, [5, 5])
+        Traceback (most recent call last):
+                ...
+        TypeError: b must be an integer
+
+	>>> add_integer("hola", "hola")
+	Traceback (most recent call last):
+                ...
+        TypeError: a must be an integer
+
+	>>> add_integer("hola", 4)
+	Traceback (most recent call last):
+		...
+	TypeError: a must be an integer
+
+	>>> add_integer(45, "holberton")
+	Traceback (most recent call last):
+                ...
+        TypeError: b must be an integer
+
+	>>> add_integer()
+	Traceback (most recent call last):
+		...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+	>> add_integer(45, 5+5j)
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer
