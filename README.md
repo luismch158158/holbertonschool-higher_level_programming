@@ -11,6 +11,7 @@ This repository is about my learning Python at Holberton School
 - 0x06. Python - Classes and Objects
 - 0x07. Python - Test-driven development
 - 0x08. Python - More Classes and Objects
+- 0x09. Python - Everything is object
 
 
 
