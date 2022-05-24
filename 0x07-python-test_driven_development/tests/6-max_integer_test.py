@@ -35,7 +35,7 @@ class TestMaxInteger(unittest.TestCase):
 
         self.assertEqual(max_integer([5, 12, 2]), 12)
 
-        self.assertEqual(max_integer([1, 5]), 5)
+        self.assertEqual(max_integer([5]), 5)
 
         self.assertEqual(max_integer([150, 500, 200, 1000, 520]), 1000)
 
@@ -60,7 +60,7 @@ class TestMaxInteger(unittest.TestCase):
 
         self.assertEqual(max_integer([44, -50, -100, 1]), 44)
 
-        self.assertEqual(max_integer([50, 40, -44, -11]), 50)
+        self.assertEqual(max_integer([50, 40, -44, 11]), 50)
 
     def tester_negatives(self):
         """In this unittest only negative numbers will be tested"""
