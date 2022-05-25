@@ -62,16 +62,6 @@ Checks to realise:
 		...
 	TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
 
-	>>> print(matrix_mul([[48, 51]], [[]]))
-	Traceback (most recent call last):
-		...
-	ValueError: m_b can't be empty
-
-	>>> print(matrix_mul([], [[23, 5]]))
-	Traceback (most recent call last):
-		...
-	ValueError: m_a can't be empty
-
 	>>> print(matrix_mul([[44, 2], [55, 4]], [[5, "Print"], [56, []]]))
 	Traceback (most recent call last):
 		...
