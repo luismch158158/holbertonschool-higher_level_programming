@@ -29,7 +29,7 @@ class TestMaxInteger(unittest.TestCase):
 
         self.assertEqual(max_integer([55, 15, 2, 5]), 55)
 
-        self.assertEqual(max_integer([0, 0, 0, 1]), 1)
+        self.assertEqual(max_integer([1, 1, 1, 1]), 1)
 
         self.assertEqual(max_integer([22, 1]), 22)
 
@@ -40,6 +40,10 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([150, 500, 200, 1000, 520]), 1000)
 
         self.assertEqual(max_integer([54, 53, 66]), 66)
+
+    def tester_boolean(self):
+        """Tester of boolean"""
+        self.assertEqual(max_integer([True, False, True]), True)
 
     def tester_data_mix(self):
         """In this unittest data mixed numbers will be tested"""
