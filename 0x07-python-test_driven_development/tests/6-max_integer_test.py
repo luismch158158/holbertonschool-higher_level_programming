@@ -84,52 +84,52 @@ class TestMaxInteger(unittest.TestCase):
 
         self.assertEqual(max_integer([-51, -4, -66, -4]), -4)
 
-    def tester_not_is_list(self):
-        """In this unittest only incorrect data types will be tested"""
+    #def tester_not_is_list(self):
+        #"""In this unittest only incorrect data types will be tested"""
 
-        """Also make sure value errors are raised when necessary"""
+        #"""Also make sure value errors are raised when necessary"""
 
-        list_for_test = []
-        self.assertIsNone(max_integer(list_for_test))
+        #list_for_test = []
+        #self.assertIsNone(max_integer(list_for_test))
 
-        list_for_test = []
-        self.assertEqual(max_integer(list_for_test), None)
+        #list_for_test = []
+        #self.assertEqual(max_integer(list_for_test), None)
 
-        list_for_test = [54, -55, "Hola", 4]
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = [54, -55, "Hola", 4]
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = [[54, -55], 40, 4]
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = [[54, -55], 40, 4]
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = ["Como", "Estas", "?"]
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = ["Como", "Estas", "?"]
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = [1 + 50, ["hola", "como"], 4]
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = [1 + 50, ["hola", "como"], 4]
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = ["54", "-55", "Hola", "4"]
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = ["54", "-55", "Hola", "4"]
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = [0, 55.55, "Hola", 4]
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = [0, 55.55, "Hola", 4]
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = "Hola, como estas"
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = "Hola, como estas"
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = {12, True, -5, False}
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = {12, True, -5, False}
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = {2, 55, 65, 5}
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = {2, 55, 65, 5}
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = ["Hola?", -500.55]
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = ["Hola?", -500.55]
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = [55.44]
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = [55.44]
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
-        list_for_test = ["Hello", -44.2, 52]
-        self.assertRaises(TypeError, max_integer, list_for_test)
+        #list_for_test = ["Hello", -44.2, 52]
+        #self.assertRaises(TypeError, max_integer, list_for_test)
 
 
 if __name__ == "__main__":
