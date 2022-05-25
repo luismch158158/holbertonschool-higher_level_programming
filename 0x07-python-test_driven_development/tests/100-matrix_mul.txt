@@ -24,10 +24,18 @@ Checks to realise:
 	>>> print(matrix_mul([[8, -1], [5, 1]], [[2, 5], [2, 1]]))
 	[[14, 39], [12, 26]]
 
+	>>> matrix_mul([[3.0, 4.0], [25.0, 1.0]], [[1, 1], [1, 1]])
+	[[7.0, 7.0], [26.0, 26.0]]
+
 	>>> print(matrix_mul([[4, 1]], "Hello"))
 	Traceback (most recent call last):
 		...
 	TypeError: m_b must be a list
+
+	>>> print(matrix_mul("Hello", [[24, 54]]))
+	Traceback (most recent call last):
+	  ...
+	TypeError: m_a must be a list
 
 	>>> print(matrix_mul(["Hello", "How"], [[80, -5]]))
 	Traceback (most recent call last):
@@ -38,6 +46,16 @@ Checks to realise:
 	Traceback (most recent call last):
 		...
      	TypeError: m_b must be a list of lists
+
+	>>> print(matrix_mul([[48, 51]], [[]]))
+        Traceback (most recent call last):
+                ...
+        ValueError: m_b can't be empty
+
+	>>> matrix_mul([], [[4.9, 10]])
+	Traceback (most recent call last):
+		...
+	ValueError: m_a can't be empty
 
 	>>> print(matrix_mul([[48, 55], [-5, 22]]))
 	Traceback (most recent call last):
@@ -59,7 +77,32 @@ Checks to realise:
 		...
 	TypeError: m_b should contain only integers or floats
 
+	>> print(matrix_mul([[55, (52, )], [5, 4]], [[3, 6], [2, 1]]))
+	Traceback (most recent call last):
+		...
+	TypeError: m_a should contain only integers or floats
+
 	>>> print(matrix_mul([[5, 44], [55.5]], [[2, 42], [5.21, 55]]))
 	Traceback (most recent call last):
 		...
 	TypeError: each row of m_a must be of the same size
+
+	>>> matrix_mul([[44, 4], [53, 8.5]], [[56], [1, 0]])
+	Traceback (most recent call last):
+		...
+	TypeError: each row of m_b must be of the same size
+
+	>>> matrix_mul([[6, 7, 91], [55, 12, 10]], [[20, 52], [58, 63]])
+	Traceback (most recent call last):
+		...
+	ValueError: m_a and m_b can't be multiplied
+
+	>>> matrix_mul([[44, 4], [5, 87]])
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+	>>> matrix_mul()
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
