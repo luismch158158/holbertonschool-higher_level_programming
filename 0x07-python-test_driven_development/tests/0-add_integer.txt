@@ -24,6 +24,9 @@ Checks to realise:
 	>>> add_integer(5.6, 8)
 	13
 
+	>>> add_integer(4)
+	102
+
 	>>> add_integer([5, 5], "hola")
 	Traceback (most recent call last):
                 ...
