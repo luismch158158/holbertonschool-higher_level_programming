@@ -84,6 +84,12 @@ class TestMaxInteger(unittest.TestCase):
 
         self.assertEqual(max_integer([-51, -4, -66, -4]), -4)
 
+        list_for_test = []
+        self.assertIsNone(max_integer(list_for_test))
+
+        list_for_test = []
+        self.assertEqual(max_integer(list_for_test), None)
+
     #def tester_not_is_list(self):
         #"""In this unittest only incorrect data types will be tested"""
 
