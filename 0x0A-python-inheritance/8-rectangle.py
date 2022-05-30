@@ -20,7 +20,7 @@ class Rectangle(BaseGeometry):
 
     def __init__(self, width, height):
         """Instantiation with width and height"""
-        self.integer_validator("width", width)
+        BaseGeometry.integer_validator(self, "width", width)
         self.__width = width
-        self.integer_validator("height", height)
+        BaseGeometry.integer_validator(self, "height", height)
         self.__height = height
