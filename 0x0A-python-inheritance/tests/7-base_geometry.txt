@@ -1,0 +1,70 @@
+==========================
+  How to use 7-base_geometry.py  
+==========================
+
+``7-base_geometry`` class BaseGeometry
+
+File ``7-base_geometry``
+
+Importing the function from the module:
+
+	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+Checks to realise:
+
+	>>> modulo_doc = __import__("7-base_geometry").__doc__
+	>>> print(len(modulo_doc) > 0)
+	True
+
+	>>> class_doc = __import__("7-base_geometry").BaseGeometry.__doc__
+	>>> print(len(class_doc) > 0)
+	True
+
+Tester of Method Area
+=====================
+``Area`` will raise an exception because it not implemented
+
+	>>> bg = BaseGeometry()
+
+	>>> try:
+    	...	print(bg.area())
+	... except Exception as e:
+	...	print("[{}] {}".format(e.__class__.__name__, e))
+	...
+	[Exception] area() is not implemented
+
+Tester of Method Integer Validator
+==================================
+
+``Integer_validator`` checks if type(value) is an integer, otherwhise will raise an error
+
+Tester with integer cases:
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+	>>>
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("width", 89)
+	>>>
+
+Tester with string:
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("name", "John")
+        Traceback (most recent call last):
+	TypeError: name must be an integer
+
+Tester with zero value:
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("age", 0)
+	Traceback (most recent call last):
+    	ValueError: age must be greater than 0
+
+Tester with negative number
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("distance", -4)
+	Traceback (most recent call last):
+    	ValueError: distance must be greater than 0
