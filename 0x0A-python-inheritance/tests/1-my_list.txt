@@ -1,0 +1,57 @@
+==========================
+  How to use 1-my_list.py  
+==========================
+
+``1-my_list`` a class MyList that inherits from list
+
+File ``1-my_list.py``
+
+Prints the list, but sorted (ascending sort)
+
+Importing the function from the module:
+
+	>>> MyList = __import__("1-my_list").MyList
+
+Checks to realise:
+
+	>>> modulo_doc = __import__("1-my_list").__doc__
+	>>> print(len(modulo_doc) > 0)
+	True
+
+	>>> class_doc = __import__("1-my_list").MyList.__doc__
+	>>> print(len(class_doc) > 0)
+	True
+
+	>>> function_doc = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> print(len(function_doc) > 0)
+	True
+
+Other Checks to realise:
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+Negative numbers:
+
+	>>> my_list = MyList()
+        >>> my_list.append(-4)
+        >>> my_list.append(-8)
+        >>> my_list.append(-200)
+        >>> my_list.append(4)
+        >>> my_list.append(-1)
+        >>> print(my_list)
+        [-4, -8, -200, 4, -1]
+        >>> my_list.print_sorted()
+	[-200, -8, -4, -1, 4]
+        >>> print(my_list)
+        [-4, -8, -200, 4, -1]
