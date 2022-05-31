@@ -20,6 +20,14 @@ Checks to realise:
 	>>> print(len(class_doc) > 0)
 	True
 
+	>>> area_doc = __import__("7-base_geometry").BaseGeometry.area.__doc__
+        >>> len(area_doc) > 1
+        True
+
+        >>> function_doc = __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__
+        >>> len(function_doc) > 1
+        True
+
 Tester of Method Area
 =====================
 ``Area`` will raise an exception because it not implemented
