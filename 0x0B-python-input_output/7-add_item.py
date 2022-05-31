@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """Load, add, save"""
+
+
 from sys import argv
 from os.path import exists
 
@@ -9,7 +11,7 @@ load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 namefile = "add_item.json"
 argc = len(argv)
 
-file_list = []
+new_list = []
 
 if exists(namefile):
     new_list = load_from_json_file(namefile)
