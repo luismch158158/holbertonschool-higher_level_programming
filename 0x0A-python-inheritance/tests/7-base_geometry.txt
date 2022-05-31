@@ -110,3 +110,15 @@ Tester with negative number
         Traceback (most recent call last):
         ...
         TypeError: dict must be an integer
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("Hello")
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("Hello", 45, 56)
+        Traceback (most recent call last):
+        ...
+        TypeError: integer_validator() takes 3 positional arguments but 4 were given
