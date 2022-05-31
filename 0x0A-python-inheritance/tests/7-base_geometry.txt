@@ -68,3 +68,45 @@ Tester with negative number
         >>> bg.integer_validator("distance", -4)
 	Traceback (most recent call last):
     	ValueError: distance must be greater than 0
+
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("bool", True)
+	Traceback (most recent call last):
+	...
+        TypeError: bool must be an integer
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("float", 4.6)
+        Traceback (most recent call last):
+        ...
+        TypeError: float must be an integer
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("complex", 4j)
+        Traceback (most recent call last):
+        ...
+        TypeError: complex must be an integer
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("string", "Pythonawesome")
+        Traceback (most recent call last):
+        ...
+        TypeError: string must be an integer
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("list", [45, 52, 56])
+        Traceback (most recent call last):
+        ...
+        TypeError: list must be an integer
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("tuple", (45, 665))
+        Traceback (most recent call last):
+        ...
+        TypeError: tuple must be an integer
+
+	>>> bg = BaseGeometry()
+        >>> bg.integer_validator("dict", {"edad": 19})
+        Traceback (most recent call last):
+        ...
+        TypeError: dict must be an integer
