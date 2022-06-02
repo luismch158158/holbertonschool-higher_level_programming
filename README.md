@@ -14,6 +14,7 @@ This repository is about my learning Python at Holberton School
 - 0x09. Python - Everything is object
 - 0x0A. Python - Inheritance
 - 0x0B. Python - Input/Output
+- 0x0C. Python - Almost a circle
 
 
 
