@@ -113,10 +113,6 @@ class Tester_Rectangle_Area(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "height must be > 0"):
             b2.height = 0
 
-
-#Aqui me quede modificar de aca para abajo el contenido
-#################################################
-
 class Tester_display(unittest.TestCase):
     """Tester class display method"""
     def set_nb_to_zero(self):
