@@ -53,10 +53,10 @@ class Base:
         representation json_string"""
         list_new = []
 
-        if ((json_string is not None) or (len(json_string) != 0)):
-            list_new = json.loads(json_string)
+        if ((json_string is None) or (len(json_string) == 0)):
+            return list_new
 
-        return (list_new)
+        return (json.loads(json_string))
 
     @classmethod
     def create(cls, **dictionary):
