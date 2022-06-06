@@ -93,9 +93,6 @@ class TestBaseClass(unittest.TestCase):
         """
         Tester instance of Base Class
         """
-        """Averiguar porque cuando coloco
-        Base sin argumento me da error arriba en el
-        tester de None id's para el primer elemento"""
         p1 = Base()
         self.assertEqual(type(p1), Base)
         self.assertTrue(isinstance(p1, Base))
