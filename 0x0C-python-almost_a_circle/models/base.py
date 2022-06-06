@@ -2,6 +2,7 @@
 """Definition class"""
 import json
 import os
+import turtle
 
 
 class Base:
@@ -140,3 +141,27 @@ class Base:
                             new_dict[key] = int(value)
                         result.append(cls.create(**new_dict))
         return (result)
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Opens a window and draws all the Rectangles and Squares
+        """
+        turtle.shape("turtle")
+        for rectangle in list_rectangles:
+            turtle.goto(rectangle.x, rectangle.y)
+            for i in range(4):
+                turtle.pendown()
+                turtle.forward(rectangle.width)
+                turtle.right(90)
+                turtle.forward(rectangle.height)
+                turtle.penup()
+        for square in list_squares:
+            turtle.goto(square.x, square.y)
+            for i in range(4):
+                turtle.pendown()
+                turtle.forward(square.size)
+                turtle.right(90)
+                turtle.penup()
+
+        turtle.done()
