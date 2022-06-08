@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Definition class"""
+import csv
 import json
 import os
 import turtle
-import csv
 
 
 class Base:
