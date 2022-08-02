@@ -8,7 +8,6 @@ const number = parseInt(args[2]);
 
 function factorial (number) {
   if (Number.isNaN(number)) {
-    // console.log(1);
     return (1);
   } else if (number <= 1) {
     return 1;
