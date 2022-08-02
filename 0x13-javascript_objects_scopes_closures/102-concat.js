@@ -17,6 +17,8 @@ content += fs.readFileSync(argv[3], 'utf-8', (err, data) => {
   if (err) console.error(err);
 });
 
+content += '\n';
+
 fs.writeFileSync(argv[4], content, 'utf-8', err => {
   if (err) console.error(err);
 });
