@@ -16,9 +16,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_data = State(name='Louisiana')
-    session.add(new_data)
-
     states = session.query(State).filter(State.name.like('%a%'))
 
     for state in states:
