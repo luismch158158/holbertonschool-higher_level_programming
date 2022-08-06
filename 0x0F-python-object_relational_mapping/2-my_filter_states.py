@@ -19,7 +19,7 @@ if __name__ == '__main__':
     argument = argv[4]
 
     cursor.execute("SELECT * FROM states\
-                    WHERE name = '{:s}' ORDER BY id ASC;".format(argument))
+                    WHERE name = BINARY '{:s}' ORDER BY id ASC;".format(argument))
 
     m = cursor.fetchall()
 
