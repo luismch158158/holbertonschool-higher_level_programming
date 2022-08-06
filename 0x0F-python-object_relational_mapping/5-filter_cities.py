@@ -6,7 +6,6 @@ lists all cities of that state,using the database hbtn_0e_4_usa"""
 if __name__ == '__main__':
     from sys import argv
     import MySQLdb
-
     import re
 
     if (len(argv) != 5):
@@ -15,7 +14,7 @@ if __name__ == '__main__':
                database name and state name")
         exit(1)
 
-    argument = ''.join(argv[4].split())
+    argument = ' '.join(argv[4].split())
 
     if (re.search('^[a-zA-Z ]+$', argument) is None):
         print('Please enter a valid name State')
@@ -35,7 +34,7 @@ if __name__ == '__main__':
 
     result_quantity = cursor.execute("SELECT cities.name FROM cities\
                     INNER JOIN states ON cities.state_id=states.id\
-                    WHERE states.name='{:s}'\
+                    WHERE states.name = '{:s}'\
                     ORDER BY cities.id ASC;".format(argument))
 
     data_of_query = cursor.fetchall()
