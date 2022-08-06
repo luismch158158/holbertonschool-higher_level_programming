@@ -29,9 +29,6 @@ if __name__ == '__main__':
 
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM states\
-                    WHERE name = '{:s}' ORDER BY id ASC;".format(argument))
-
     result_quantity = cursor.execute("SELECT cities.name FROM cities\
                     INNER JOIN states ON cities.state_id=states.id\
                     WHERE states.name = '{:s}'\
