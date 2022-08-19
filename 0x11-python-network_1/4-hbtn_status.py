@@ -9,5 +9,5 @@ if __name__ == '__main__':
     req_text = req.text
 
     print('Body response:')
-    print('\t type: {}'.format(type(req_text)))
-    print('\t content: {}'.format(req_text))
+    print('\t- type: {}'.format(type(req_text)))
+    print('\t- content: {}'.format(req_text))
