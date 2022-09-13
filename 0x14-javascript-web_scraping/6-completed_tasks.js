@@ -10,9 +10,9 @@ get(urlBase)
     data.forEach(({ userId, completed }) => {
       if (completed) {
         if (finalObj[userId] === undefined) {
-          finalObj[id] = 1;
+          finalObj[userId] = 1;
         } else {
-          finalObj[id] += 1;
+          finalObj[userId] += 1;
         }
       }
     })
