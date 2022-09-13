@@ -9,7 +9,7 @@ get(url)
     for (const film of results) {
       film.characters.forEach(urls => {
         if (urls.includes('18')) {
-          count += 1
+          count += 1;
         }
       });
     }
