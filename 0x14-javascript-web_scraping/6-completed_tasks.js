@@ -2,7 +2,6 @@
 const { get } = require('axios').default;
 const urlBase = process.argv[2];
 
-
 get(urlBase)
   // data es un array de objetos
   .then(({ data }) => {
@@ -15,7 +14,7 @@ get(urlBase)
           finalObj[userId] += 1;
         }
       }
-    })
+    });
     console.log(finalObj);
   })
   .catch((err) => console.log(err));
